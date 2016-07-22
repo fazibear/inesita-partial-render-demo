@@ -1,8 +1,8 @@
 source "https://rubygems.org"
 
 # inesita gem
-#gem 'inesita', '~> 0.4.0'
-gem 'inesita', :github => 'bebac/inesita'
+gem 'inesita', '~> 0.4.0'
+# gem 'inesita', :github => 'bebac/inesita'
 gem 'inesita-livereload', '~> 0.1.0'
 
 gem 'opal',         :github => 'opal/opal', :tag => "v0.9.4"

@@ -5,7 +5,7 @@ class Clock
     @time = Time.now
     every 1 do
       @time = Time.now
-      render!(self)
+      render!
     end
   end
 
@@ -20,7 +20,7 @@ class Clock
       text @time.strftime('%r')
     end
     div do
-      input type: 'text', value: store.get('value'), onchange: -> (e) { store.set('value', e.target.value) }
+      input type: 'text', value: store.get('value'), onkeyup: -> (e) { store.set('value', e.target.value); render! }
     end
   end
 end

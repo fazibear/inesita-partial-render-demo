@@ -1,11 +1,9 @@
 class Input
   include Inesita::Component
 
-  def initialize
-    @is_leaf = true
-  end
-
-  def init
+  def change(e)
+    store.set('value', e.target.value)
+    render!
   end
 
   def render
@@ -13,7 +11,7 @@ class Input
       h2 { "Input Component" }
     end
     div do
-      input type: 'text', value: store.get('value'), onchange: -> (e) { store.set('value', e.target.value) }
+      input type: 'text', value: store.get('value'), onkeyup: method(:change)
     end
   end
 end
